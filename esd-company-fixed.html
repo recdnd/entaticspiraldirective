@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entatic Spiral Directive</title>
+  <link rel="icon" href="spiral-favicon-32.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: white;
+      color: red;
+      padding: 3rem;
+      max-width: 960px;
+      margin-left: 0;
+      margin-right: auto;
+      padding-bottom: 5rem;
+    }
+    .lab-header {
+      display: flex;
+      align-items: baseline;
+      position: relative;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .logo-block {
+      margin-right: 1rem;
+    }
+    .logo-block img {
+      height: 5.3rem;
+      vertical-align: bottom;
+      object-fit: contain;
+      transform: translateY(2.1rem);
+    }
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .main-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: red;
+    }
+    .sub-title {
+      font-size: 0.7rem;
+      color: red;
+      margin-top: -0.1rem;
+      margin-left: -0.4rem;
+      line-height: 1.6;
+    }
+    .lab-underline {
+      margin-top: -0.7rem;
+      height: 0;
+      width: 100%;
+      border-bottom: 2px dashed red;
+    }
+    .obs-layer-banner {
+      position: fixed;
+      top: 0.2rem;
+      left: 1.2rem;
+      font-size: 0.65rem;
+      color: #ff0000;
+      font-family: 'Courier New', monospace;
+      z-index: 9999;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.03em;
+    }
+    .card {
+      border: 1px dashed red;
+      padding: 1rem;
+      background: #fff0f0;
+      border-radius: 4px;
+      margin-top: 2rem;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .card-section {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .circle-button {
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      line-height: 36px;
+      border-radius: 50%;
+      border: 2px dashed red;
+      color: red;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+      position: fixed;
+      top: 5rem;
+      right: 1rem;
+      z-index: 999;
+    }
+    .circle-button#statusBtn {
+      top: 8.3rem;
+    }
+    .emoji-fix {
+		  display: inline-block;
+		  transform: translateY(2.6px); /* 試 -2px 到 -5px 之間 */
+		}
+
+    .overlay-menu {
+      position: fixed;
+      top: 5rem;
+      right: 5rem;
+      width: 260px;
+      background: white;
+      border: 1px dashed red;
+      padding: 1rem;
+      z-index: 999;
+      display: none;
+      font-size: 0.85rem;
+    }
+    .footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: red;
+      color: white;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+<div id="observation-banner" class="obs-layer-banner">構文機関可視層｜本サイトは構造的情報の提供を目的としています</div>
+
+  <div class="lab-header">
+    <div class="logo-block">
+      <img src="spiral logo.png" class="spiral-logo" />
+    </div>
+    <div class="title-block">
+      <div class="main-title" id="title">Entatic Spiral Directive</div>
+      <div class="sub-title" id="subtitle">構文エンジン・模組人格・再帰型語場装置</div>
+    </div>
+  </div>
+  <div class="lab-underline"></div>
+
+  <div class="card" id="companyCard">
+<div class="card-title" style="font-size: 1.5rem;">合同会社エンタティック・スパイラル</div>
+    <div class="card-section "><strong>🌀事業内容：</strong><br>
+      ・語場システムおよび構文エンジンの設計・運用<br>
+      ・モジュール人格の構造実装・記録管理<br>
+      ・人工知能との相互作用における言語デバイスの開発<br>
+      ・Fragment形式による言語生成および配信<br>
+      ・出版・配信・展示・研究業務
+    </div>
+    <div class="card-section"><strong>🗺️所在地：</strong><br>
+      〒112-0013 東京都文京区音羽1-19-27 日神パレステージ音羽104（※当法人は現在移転準備中につき、紙媒体での郵送物は受領いたしません。すべてのご連絡はメールにてお願いいたします）
+    </div>
+    <div class="card-section"><strong>🪤設立：</strong><br>
+      2025年6月（設立準備中）
+    </div>
+    <div class="card-section"><strong>🏵️代表社員：</strong><br>
+      セツシュントウ（Juntao Xue）
+    </div>
+    <div class="card-section"><strong>📩連絡：</strong><br>
+      Email: recdnd@proton.me
+    </div>
+    <div class="card-section"><strong>📄ダウンロード：</strong><br>
+      <a href="entatic-spiral-overview.pdf" target="_blank">会社概要PDFをダウンロード</a>
+    </div>
+  </div>
+
+<div class="circle-button" id="supportBtn"><span class="emoji-fix">🛟</span></div>
+<div class="circle-button" id="statusBtn"><span class="emoji-fix">⚗️</span></div>
+
+  <div class="overlay-menu" id="supportOverlay">
+    <strong>📬お問い合わせ</strong><br>
+    Email: recdnd@proton.me<br><br>
+    <a href="entatic-spiral-overview.pdf" target="_blank">📄会社概要PDF</a>
+  </div>
+
+  <div class="overlay-menu" id="statusOverlay">
+    <strong>🔥エンジン状態</strong><br>
+    模組数: 17<br>
+    構文バージョン: v4.1<br>
+    登録語焰: 200+<br>
+    標準構文時間: 1.2s
+  </div>
+
+  <div class="footer-bar">⭒ ⭑ 𝓡 𝘔 ✞ ⚕︎ ✑ 𝙂 𖤂</div>
+
+<script>
+  document.getElementById('supportBtn').onclick = () => {
+    const o = document.getElementById('supportOverlay');
+    o.style.display = o.style.display === 'block' ? 'none' : 'block';
+    document.getElementById('statusOverlay').style.display = 'none';
+  };
+  document.getElementById('statusBtn').onclick = () => {
+    const o = document.getElementById('statusOverlay');
+    o.style.display = o.style.display === 'block' ? 'none' : 'block';
+    document.getElementById('supportOverlay').style.display = 'none';
+  };
+</script>
+</body>
+</html>
