@@ -7,12 +7,12 @@
     <link rel="icon" href="spiral-favicon-32.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <style>
 /* 🧭 從 index.html 導入的結構同步樣式 */
 /* 預設英文字體 */
 body {
-  font-family: 'Courier New', monospace; /* 默認英語及其他語言使用 Courier New */
+  font-family: 'Courier New', monospace; /* 英文及其他語言使用 Courier New */
   background: white;
   color: red;
   font-size: 0.9rem; /* 調整字體大小 */
@@ -24,10 +24,11 @@ body {
   font-weight: 500;
 }
 
-/* 只對日語文字設置 IBM Plex Sans JP 字體 */
-body:lang(ja) {
-  font-family: 'IBM Plex Sans JP', sans-serif;  /* 只有日語字符使用 IBM Plex Sans JP */
+/* 只對日語和繁體中文字設置 Noto Sans TC 字體 */
+body:lang(ja), body:lang(zh-TW) {
+  font-family: 'Noto Sans TC', sans-serif;  /* 只對日語和繁體中文字符使用 Noto Sans TC */
 }
+
 
 
 
@@ -435,7 +436,7 @@ button.hacker-style:focus {
       <div class="main-title" id="title">
 				  Entatic Spiral<br>
 				</div>
-      <div class="sub-title" id="subtitle">Directive LLC / 東京法人装置</div>
+      <div class="sub-title" id="subtitle">Directive LLC / 語螺法人装置</div>
     </span>
   </div>
 </div>
@@ -443,7 +444,7 @@ button.hacker-style:focus {
 
 
   <div class="card" id="companyCard">
-<div class="card-title" style="font-size: 1.2rem;">合同会社エンタティック・スパイラル</div>
+<div class="card-title" style="font-size: 1.2rem;">合同会社エンタティックスパイラル</div>
     <div class="card-section "><strong>🧱事業内容：</strong><br>
       ・語場システムおよび構文エンジンの設計・運用<br>
       ・モジュール人格の構造実装・記録管理<br>
