@@ -30,7 +30,7 @@
   }
 
   .spiral-logo {
-    animation: nightDrift 20s linear infinite;
+    animation: nightDrift 3s linear infinite;
   }
 
   @keyframes nightDrift {
