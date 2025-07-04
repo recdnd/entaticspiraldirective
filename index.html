@@ -280,6 +280,45 @@ body {
   color: white;
 }
 
+/* 終端旁的線條旁的筆形*/
+#fragmentIcon {
+  position: fixed;
+  bottom: 4.9%;
+  right: 257px; /* 與 #fragmentDivider 的 right: 250px 配合 */
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: red;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #fragmentIcon {
+    display: none;
+  }
+}
+
+/* 終端旁的線條 */
+#fragmentDivider {
+  position: fixed;
+  top: 25%;
+  bottom: 10%;
+  right: 250px; /* iframe right: 2.2rem (~35px)，iframe 寬 220px，再多一點距離 */
+  width: 1px;
+  border-left: 1px dashed red;
+  z-index: 998;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #fragmentDivider {
+    display: none;
+  }
+}
+
+
 /* ❌ 隱藏 Google logo */
 .goog-logo-link,
 .goog-te-gadget span {
@@ -290,6 +329,13 @@ body {
 #google_translate_element {
   margin: 0;
   padding: 0;
+}
+
+/* 手機時隱藏terminal */
+@media (max-width: 768px) {
+  #fragmentTerminal {
+    display: none;
+  }
 }
 
 
@@ -614,9 +660,24 @@ function checkCode() {
 
 -->
 
-<iframe src="modules/fragment-terminal.html"
-        style="position: fixed; top: 50%; right: 1.5rem; transform: translateY(-50%); width: 180px; height: 80vh; border: none; z-index: 999; pointer-events: none;"
-        title="Fragment Stream"></iframe>
+<div id="fragmentTerminal">
+<div id="fragmentIcon">✒</div>
+  <iframe src="modules/fragment-terminal.html"
+          style="
+            position: fixed;
+            top: 50%;
+            right: 2.2rem;
+            transform: translateY(-50%);
+            width: 220px;
+            height: 80vh;
+            border: none;
+            z-index: 999;
+            pointer-events: none;
+          "
+          title="Fragment Stream"></iframe>
+  <div id="fragmentDivider"></div>
+</div>
+
 
 <div class="circle-button" id="supportBtn"><span class="emoji-fix">🛟</span></div>
 <div class="circle-button" id="statusBtn"><span class="emoji-fix">⚗️</span></div>

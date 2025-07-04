@@ -8,52 +8,36 @@
       margin: 0;
       padding: 0;
       background: transparent;
-      color: red;
+      color: #700000;
       font-family: 'Courier New', monospace;
-      font-size: 0.85rem;
+      font-size: 0.7rem;
       overflow: hidden;
-      height: 100%;
-    }
-
-    .terminal-header {
-      color: red;
-      font-weight: bold;
-      font-size: 0.8rem;
-      padding: 0.3rem 0.6rem;
-      border-bottom: 1px dashed red;
-      text-align: left;
-      white-space: nowrap;
-      position: absolute;
-      top: 11.8rem;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      z-index: 1000;
     }
 
     .terminal {
-      position: absolute;
-      top: 1.4rem;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: fixed;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%);
+      width: 180px;
+      max-height: 80vh;
+      background: rgba(255, 240, 240, 0.85);
+      border-left: 1px dashed red;
+      padding-left: 0.8rem;
+      z-index: 1000;
+      pointer-events: none;
       display: flex;
       flex-direction: column-reverse;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding-left: 0.4rem;
-      overflow: hidden;
+      line-height: 1.3;
     }
 
     .line {
-      white-space: pre;
-      line-height: 1.45;
-      padding-left: 0.5rem;
+      white-space: pre-wrap;
     }
 
     .cursor {
       display: inline-block;
-      width: 6px;
+      width: 4px;
       background: red;
       animation: blink 1s step-start infinite;
       vertical-align: bottom;
@@ -63,11 +47,18 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
+
+    @media (max-width: 768px) {
+      .terminal {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="terminal-header"> </div>
-  <div class="terminal" id="terminal"></div>
+  <div class="terminal" id="terminal">
+    [BOOTING] Fragment Stream Initializing...
+  </div>
 
   <script>
     const fragments = `
@@ -114,11 +105,11 @@ fossil weight: light
         if (charIndex < lineText.length) {
           cursor.insertAdjacentText('beforebegin', lineText[charIndex]);
           charIndex++;
-          const delay = Math.random() * 1 + 15;
+          const delay = Math.random() * 40 + 10;
           setTimeout(typeChar, delay);
         } else {
           line.removeChild(cursor);
-          if (terminal.children.length > 40) {
+          if (terminal.children.length > 60) {
             terminal.removeChild(terminal.lastChild);
           }
           callback();
@@ -130,11 +121,12 @@ fossil weight: light
     function playNext() {
       typeLine(fragments[index % fragments.length], () => {
         index++;
-        setTimeout(playNext, 1);
+        setTimeout(playNext, 300);
       });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      terminal.innerHTML = ''; // 清除 BOOTING
       playNext();
     });
   </script>
