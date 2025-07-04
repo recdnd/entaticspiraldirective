@@ -210,28 +210,6 @@ body {
   color: white;
 }
 
-/* 黑客風格半透明按鈕 */
-button.hacker-style {
-  background: white; /* 白色背景 */
-  color: #ff0000; /* 鮮紅色文字 */
-  border: none; /* 無邊框 */
-  
-  font-family: 'Courier New', monospace; /* 高科技字體 */
-  font-size: 1rem; /* 調整字體大小 */
-  cursor: pointer; /* 游標指示為可點擊 */
-  border-radius: 8px; /* 輕微圓角，對齊卡片圓角 */
-  transition: background 0.3s ease, box-shadow 0.3s ease; /* 變換效果 */
-}
-
-button.hacker-style:hover {
-  background: rgba(255, 0, 0, 0.1); /* 輕微紅色背景 */
-  box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.5); /* 收斂的紅光光暈 */
-}
-
-button.hacker-style:focus {
-  outline: none; /* 去除焦點邊框 */
-}
-
 
 
     
@@ -466,7 +444,8 @@ button.hacker-style:focus {
     ・独自語彙による自然言語構造生成<br>
     ・AI言語行動の制度シミュレーション応用    
 <a href="https://spirallab.org" target="_blank">
-  <button class="hacker-style">🧠敬愛なる研究者・技術者の方はこちらへ</button></a>
+  <button>🧠敬愛なる研究者・技術者の方はこちらへ</button>
+</a>
   </div>
 </div>
 
@@ -522,7 +501,6 @@ button.hacker-style:focus {
   border: 1px solid red;
   gap: 0.6rem;
 ">
-<div style="display: inline-flex; align-items: center;">
   <span style="font-size: 1.2rem;">🔑</span>
   <input type="text" id="modpassInput" placeholder="MODPASS-XXXX" style="
     width: 220px;
@@ -537,9 +515,9 @@ button.hacker-style:focus {
     border-radius: 3px;
     box-shadow: inset 0 0 0 1px #ffdddd;
   ">
-  
-  <button class="hacker-style" onclick="delayedCheck()" style="font-size: 0.9rem; margin-left: 1rem;">✅合格コードを確認</button>
 </div>
+
+<button onclick="delayedCheck()" style="margin-left: 1rem; font-size: 0.9rem;">✅合格コードを確認</button>
 
 
 
@@ -561,7 +539,7 @@ button.hacker-style:focus {
     あなたの語場適性をチェックしましょう：<br><br>
 		<iframe src="modtest_v8_ritual.html" width="100%" height="500" style="border: 1px solid red; background:white;" title="Spiral Module Test"></iframe>
     <a href="spiral_entry_sheet.html" target="_blank">
-      <button class="hacker-style">📝MODPASS取得→履歴書を書く</button>
+      <button>📝MODPASS取得→履歴書を書く</button>
     </a>
   </div>
 </div>
