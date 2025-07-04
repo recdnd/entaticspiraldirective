@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entatic Spiral Directive</title>
-  <link rel="icon" href="spiral-favicon-32.png" type="image/png">
-  <style>
+<html lang="en"> <!-- 預設語言為英語 -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entatic Spiral Directive</title>
+    <link rel="icon" href="spiral-favicon-32.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    <style>
 /* 🧭 從 index.html 導入的結構同步樣式 */
+/* 預設英文字體 */
 body {
+  font-family: 'Courier New', monospace; /* 默認英語及其他語言使用 Courier New */
   background: white;
   color: red;
-  font-family: 'Courier New', monospace;
+  font-size: 0.9rem; /* 調整字體大小 */
   padding-top: 3.6rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 2rem;
   max-width: 960px;
+  font-weight: 500;
 }
+
+/* 只對日語文字設置 IBM Plex Sans JP 字體 */
+body:lang(ja) {
+  font-family: 'IBM Plex Sans JP', sans-serif;  /* 只有日語字符使用 IBM Plex Sans JP */
+}
+
+
+
 
 .lab-header {
   font-size: 0;
