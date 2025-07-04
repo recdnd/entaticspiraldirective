@@ -218,7 +218,7 @@ body {
       z-index: 999;
     }
     .circle-button#statusBtn {
-      top: 8.3rem;
+      top: 8.1rem;
     }
     .emoji-fix {
 		  display: inline-block;
@@ -284,8 +284,17 @@ body {
 }
 
 
-    
-    @media (max-width: 768px) {
+/* 📱手機放大調整 */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 1.2rem;  /* 視覺留白適中 */
+    padding-right: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
     .main-title {
     font-size: 1.4rem;
   }
@@ -295,6 +304,7 @@ body {
     display: none !important;
   }
 }
+
 
 @media (prefers-color-scheme: dark) {
   .footer-bar {
@@ -314,7 +324,7 @@ body {
       <img src="spiral logo.png" class="spiral-logo" />
     </span>
     <span class="title-block">
-      <div class="main-title" id="title">Entatic Spiral Dir.</div>
+      <div class="main-title" id="title">Entatic Spiral</div>
       <div class="sub-title" id="subtitle">構文エンジン・人格再帰型語場装置</div>
     </span>
   </div>
