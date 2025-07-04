@@ -88,7 +88,16 @@ body {
   color: red;
   font-family: 'Courier New', monospace;
   line-height: 1.1;
+
+  white-space: normal;     /* ✅ 允許自動換行 */
+  word-break: keep-all;    /* ✅ 單字不會被拆開 */
+  line-height: 0.83;        /* ✅ 多行時看起來不擠 */
   margin-bottom: -0.2rem; /* 🔧微壓主標，保持基線 */
+}
+
+.second-line {
+  display: inline-block;
+  margin-left: -0.08rem; /* ✅ 左進入，形成包繞 */
 }
 
 .sub-title {
@@ -114,7 +123,7 @@ body {
     .obs-layer-banner {
       position: fixed;
       top: 0.2rem;
-      left: 1.2rem;
+      left: 0.4rem;
       font-size: 0.65rem;
       color: #ff0000;
       font-family: 'Courier New', monospace;
@@ -289,8 +298,8 @@ body {
   body {
     max-width: 100%;
     margin: 0;
-    padding-left: 1.2rem;  /* 視覺留白適中 */
-    padding-right: 1.2rem;
+    padding-left: 1.3rem;  /* 視覺留白適中 */
+    padding-right: 1.3rem;
   }
 }
 
@@ -298,13 +307,31 @@ body {
     .main-title {
     font-size: 1.4rem;
   }
+  
+@media (max-width: 768px) {
+  .card-section,
+  .card-meta,
+  .card-layer-content,
+  .card-layer-title {
+    font-size: 0.88rem; /* 原為 0.95rem / 0.85rem */
+  }
+
+  .card-title {
+    font-size: 1.0rem;  /* 原為 1.2rem，可略降 */
+  }
+}
+
 		
 @media (max-width: 768px) {
   iframe[title="Syntax Monitor Panel"] {
     display: none !important;
   }
 }
-
+@media (max-width: 768px) {
+  .circle-button {
+    right: 0.5rem; /* 原為 1rem → 改小會往右貼 */
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   .footer-bar {
@@ -324,7 +351,9 @@ body {
       <img src="spiral logo.png" class="spiral-logo" />
     </span>
     <span class="title-block">
-      <div class="main-title" id="title">Entatic Spiral</div>
+      <div class="main-title" id="title">
+				  Entatic Spiral<br><span class="second-line">Directive LLC</span>
+				</div>
       <div class="sub-title" id="subtitle">構文エンジン・人格再帰型語場装置</div>
     </span>
   </div>
@@ -333,7 +362,7 @@ body {
 
 
   <div class="card" id="companyCard">
-<div class="card-title" style="font-size: 1.5rem;">合同会社エンタティック・スパイラル</div>
+<div class="card-title" style="font-size: 1.2rem;">合同会社エンタティック・スパイラル</div>
     <div class="card-section "><strong>🧱事業内容：</strong><br>
       ・語場システムおよび構文エンジンの設計・運用<br>
       ・モジュール人格の構造実装・記録管理<br>
