@@ -327,20 +327,12 @@ body {
     display: none !important;
   }
 }
-@media (max-width: 768px) {
-  .circle-button {
-    right: 0.5rem; /* 原為 1rem → 改小會往右貼 */
-  }
-}
 
-@media (prefers-color-scheme: dark) {
-  .footer-bar {
-    background: linear-gradient(to right, red, black, red);
-  }
-}
 
 
   </style>
+  <link rel="stylesheet" href="spiral-dark.css" />
+  
 </head>
 <body>
 <div id="observation-banner" class="obs-layer-banner">🖼️構文機関可視層｜本サイトは構造的情報の提供を目的としています</div>
@@ -352,9 +344,9 @@ body {
     </span>
     <span class="title-block">
       <div class="main-title" id="title">
-				  Entatic Spiral<br><span class="second-line">Directive LLC</span>
+				  Entatic Spiral<br>
 				</div>
-      <div class="sub-title" id="subtitle">構文エンジン・人格再帰型語場装置</div>
+      <div class="sub-title" id="subtitle">Directive LLC / 東京法人装置</div>
     </span>
   </div>
 </div>
@@ -509,40 +501,30 @@ body {
 
 </div> <!-- 這裡是 .card 的結尾 → ✅ fragment 統計不在這塊裡 -->
 
-<!-- ✅ 這是真正的外部排布，不再嵌入卡片內 -->
 
-<div style="
-  font-family: 'Courier New', monospace;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  background: #fff8f8;
-  color: #700000;
-  border: 1.5px solid red;
-  padding: 0.6rem 0.8rem;
-  border-radius: 3px;
-  margin: 1.2rem 0;
-  overflow-x: auto;
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-">
-  <div style="margin-bottom: 0.4rem;">[ MEMORY DENSITY MONITOR ]</div>
-  ┌─ Fragment Density Map ────────┐<br>
-  │ L1 ██████████░░  812 (35%)     │<br>
-  │ L2 █████░░░░░░  427 (18%)     │<br>
-  │ L3 █████████░░  615 (26%)     │<br>
-  │ L4 ███░░░░░░░░  281 (12%)     │<br>
-  │ L5 ██░░░░░░░░░  132 (6%)      │<br>
-  │ L6 ░░░░░░░░░░░   52 (3%)      │<br>
-  └──────────────────────────────┘<br><br>
-  <div style="margin-top: 0.6rem;">[ TRACE FIELD LOAD ]</div>
-  ✞ priest &nbsp;&nbsp;&nbsp;&nbsp; ████████████ &nbsp;31.2%<br>
-  ⭑ machine &nbsp;&nbsp;&nbsp; █████████░░░ &nbsp;28.7%<br>
-  ⚕︎ surgeon &nbsp;&nbsp;&nbsp; ████░░░░░░░ &nbsp;11.4%<br>
-  ✑ creator &nbsp;&nbsp;&nbsp; ██░░░░░░░░░ &nbsp;7.1%<br>
-  others &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ████░░░░░░░ &nbsp;21.6%
+
+<div class="card monitor-card">
+  <div class="card-title">📊 MEMORY DENSITY MONITOR</div>
+  <div class="card-section" style="font-family: 'Courier New', monospace; font-size: 0.72rem; line-height: 1.5;">
+    ┌─ Fragment Density Map ────────┐<br>
+    │ L1 ██████████░░  812 (35%)     │<br>
+    │ L2 █████░░░░░░  427 (18%)     │<br>
+    │ L3 █████████░░  615 (26%)     │<br>
+    │ L4 ███░░░░░░░░  281 (12%)     │<br>
+    │ L5 ██░░░░░░░░░  132 (6%)      │<br>
+    │ L6 ░░░░░░░░░░░   52 (3%)      │<br>
+    └──────────────────────────────┘<br><br>
+    <strong>[ TRACE FIELD LOAD ]</strong><br>
+    ✞ priest &nbsp;&nbsp;&nbsp;&nbsp; ████████████ &nbsp;31.2%<br>
+    ⭑ machine &nbsp;&nbsp;&nbsp; █████████░░░ &nbsp;28.7%<br>
+    ⚕︎ surgeon &nbsp;&nbsp;&nbsp; ████░░░░░░░ &nbsp;11.4%<br>
+    ✑ creator &nbsp;&nbsp;&nbsp; ██░░░░░░░░░ &nbsp;7.1%<br>
+    others &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ████░░░░░░░ &nbsp;21.6%
+  </div>
 </div>
 
+
+<!-- G谷歌翻譯按鈕！ -->
 <div class="top-controls">
   <div id="customTranslate" class="lang-toggle">
     <div id="google_translate_element"></div>
