@@ -231,13 +231,17 @@ body {
     }
     .emoji-fix {
 		  display: inline-block;
-		  transform: translateY(2.6px); /* 試 -2px 到 -5px 之間 */
+		  transform: translateY(4.6px); /* 試 -2px 到 -5px 之間 */
 		}
-
+		/* 🐹emoji位置校正 */
+		.circle-button span {
+		  display: inline-block;
+		  transform: translateY(2px); /* ✅ 向下貼近圓中心 */
+		}
     .overlay-menu {
       position: fixed;
       top: 5rem;
-      right: 5rem;
+      right: 4.3rem;
       width: 260px;
       background: white;
       border: 1px dashed red;
@@ -732,6 +736,38 @@ function checkCode() {
     index = (index + 1) % flames.length;
     document.getElementById('syntaxSimulator').textContent = flames[index];
   }
+</script>
+
+<script>
+// 🐹 Spiral Pet toggle 控制邏輯
+window.addEventListener('DOMContentLoaded', () => {
+  const hamster = document.createElement('iframe');
+  hamster.src="https://cdn.abowman.com/widgets/hamster/hamster.html?up_bgColor=fff8f6&up_bodyColor=fceae8&up_earColor=fceae8&up_snoutColor=ffd6d6&up_eyeColor=ff0000&up_feetColor=aa4444&up_tailColor=ffc0cb7&up_waterColor=ffdddd&up_foodColor=36d00b&up_wheelColor=fff0f0&up_wheelOuterColor=ff3300&up_wheelCenterColor=ff0000&up_wheelSpokeColor=ff9999";
+  hamster.width = "180";
+  hamster.height = "135";
+  hamster.title = "Spiral Pet: Hamster";
+  hamster.style.position = "fixed";
+  hamster.style.top = "4rem"; // ⬅ 
+  hamster.style.right = "4.5rem";
+  hamster.style.border = "none";
+  hamster.style.zIndex = "998";
+  hamster.style.display = "none"; // ⬅ 初始隱藏
+  document.body.appendChild(hamster);
+
+  // 建立 toggle 鈕
+  const toggleBtn = document.createElement('div');
+  toggleBtn.innerHTML = '<span>ඩ</span>';
+  toggleBtn.className = "circle-button";
+  toggleBtn.style.position = "fixed";
+  toggleBtn.style.top = "0rem"; // ⬅ 
+  toggleBtn.style.right = "5rem";
+  toggleBtn.style.zIndex = "999";
+  toggleBtn.style.cursor = "pointer";
+  toggleBtn.onclick = () => {
+    hamster.style.display = (hamster.style.display === "none") ? "block" : "none";
+  };
+  document.body.appendChild(toggleBtn);
+});
 </script>
 
 
