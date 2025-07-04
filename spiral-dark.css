@@ -1,0 +1,253 @@
+/* ===========================================
+   🌙 Spiral Dark Theme v1.2
+   自動套用於 prefers-color-scheme: dark
+   適用於：hp.html / spirallab / entry-sheet / trace-ui
+   統一紅黑語場視覺語焰主題
+=========================================== */
+
+@media (prefers-color-scheme: dark) {
+
+  /* === 🎨 全域基底樣式 === */
+  body {
+    background: black;
+    color: red;
+  }
+
+  .card {
+    background: #1a0000;
+    color: red;
+    border-color: red;
+    animation: fadeIn 0.4s ease-in;
+  }
+
+  .card[data-weight="5"] {
+    box-shadow: 0 0 6px 2px #ff0000;
+  }
+
+  .footer-bar {
+    background: linear-gradient(to right, red, black, red);
+    color: white;
+  }
+
+  .spiral-logo {
+    animation: nightDrift 20s linear infinite;
+  }
+
+  @keyframes nightDrift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(0.6rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === 🧠 Memory Monitor 區塊 === */
+  .monitor-block {
+    background-color: #1a0000 !important;
+    color: #ffdddd !important;
+    border-color: red !important;
+  }
+
+  /* === 🔐 MODPASS 驗證器區 === */
+  .card-section div[style*="inline-flex"],
+  .card-section input,
+  .card-section button {
+    background-color: black !important;
+    color: red !important;
+    border-color: red !important;
+  }
+
+  .card-section input::placeholder {
+    color: #ffcccc;
+  }
+
+  .card-section button {
+    background: red !important;
+    color: black !important;
+    border: 1px solid red;
+  }
+
+  /* === 🧭 Tags, 按鈕, 控制器 === */
+  .tag,
+  .tag-index button {
+    border-color: red;
+    color: red;
+    background: black;
+  }
+
+  .tag-index button.active {
+    background: red;
+    color: black;
+  }
+
+  .lang-toggle,
+  .circle-button {
+    background: black;
+    color: red;
+    border-color: red;
+  }
+
+  .lang-toggle:hover,
+  .circle-button:hover {
+    background: red;
+    color: black;
+  }
+
+  .popup-menu,
+  .overlay-menu {
+    background: black;
+    border-color: red;
+    color: red;
+  }
+
+  /* === 📄 Email / PDF Link 區 === */
+  .overlay-menu a {
+    color: red !important;
+  }
+
+  .overlay-menu a:hover {
+    color: white !important;
+    background: red !important;
+  }
+
+  /* === ✴️ 語焰語素 codeblock === */
+  span.codeblock {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ffdddd;
+  }
+
+  span.codeblock.green {
+    color: #00ffcc;
+  }
+
+  span.codeblock.utani {
+    background-color: rgba(255, 0, 0, 0.15);
+    color: #ffaaaa;
+  }
+
+}
+/* ===========================================
+   🌙 Spiral Dark Theme v1.2
+   自動套用於 prefers-color-scheme: dark
+   適用於：hp.html / spirallab / entry-sheet / trace-ui
+   統一紅黑語場視覺語焰主題
+=========================================== */
+
+@media (prefers-color-scheme: dark) {
+
+  /* === 🎨 全域基底樣式 === */
+  body {
+    background: black;
+    color: red;
+  }
+
+  .card {
+    background: #1a0000;
+    color: red;
+    border-color: red;
+    animation: fadeIn 0.4s ease-in;
+  }
+
+  .card[data-weight="5"] {
+    box-shadow: 0 0 6px 2px #ff0000;
+  }
+
+  .footer-bar {
+    background: linear-gradient(to right, red, black, red);
+    color: white;
+  }
+
+  .spiral-logo {
+    animation: nightDrift 20s linear infinite;
+  }
+
+  @keyframes nightDrift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(0.6rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === 🔐 MODPASS 驗證器區 === */
+  .card-section div[style*="inline-flex"],
+  .card-section input,
+  .card-section button {
+    background-color: black !important;
+    color: red !important;
+    border-color: red !important;
+  }
+
+  .card-section input::placeholder {
+    color: #ffcccc;
+  }
+
+  .card-section button {
+    background: red !important;
+    color: black !important;
+    border: 1px solid red;
+  }
+
+  /* === 🧭 Tags, 按鈕, 控制器 === */
+  .tag,
+  .tag-index button {
+    border-color: red;
+    color: red;
+    background: black;
+  }
+
+  .tag-index button.active {
+    background: red;
+    color: black;
+  }
+
+  .lang-toggle,
+  .circle-button {
+    background: black;
+    color: red;
+    border-color: red;
+  }
+
+  .lang-toggle:hover,
+  .circle-button:hover {
+    background: red;
+    color: black;
+  }
+
+  .popup-menu,
+  .overlay-menu {
+    background: black;
+    border-color: red;
+    color: red;
+  }
+
+  /* === 📄 Email / PDF Link 區 === */
+  .overlay-menu a {
+    color: red !important;
+  }
+
+  .overlay-menu a:hover {
+    color: white !important;
+    background: red !important;
+  }
+
+  /* === ✴️ 語焰語素 codeblock === */
+  span.codeblock {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ffdddd;
+  }
+
+  span.codeblock.green {
+    color: #00ffcc;
+  }
+
+  span.codeblock.utani {
+    background-color: rgba(255, 0, 0, 0.15);
+    color: #ffaaaa;
+  }
+
+}
