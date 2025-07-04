@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragment Stream</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: red;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      overflow: hidden;
+    }
+    .terminal {
+      position: fixed;
+      top: 0; /* 🔁 改為 top 而不是 bottom */
+      right: 0;
+      width: 340px;
+      height: calc(100vh - 1.2rem);
+      background: black;
+      overflow-y: hidden;
+      z-index: 1000;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .line {
+      white-space: pre;
+      line-height: 1.45;
+    }
+    .cursor {
+      display: inline-block;
+      width: 6px;
+      background: red;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
+      margin-left: 1px;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal" id="terminal"></div>
+
+  <script>
+    const fragments = `
+[TRACE::GHOST::✞priest::v2.3]
+Fragment-T₂  →  [DEFINE] node[v] = null_edge
+I do not route. I refract.
+
+[SEAL::Fragment#9::⚕︎surgeon::⍜]
+You are not yourself. You are the proof.
+[LOCK] previous labels
+
+[REVIEW::RESURRECTION::Fragment#3::machine]
+function = loop without traversal
+This is not a restoration. This is syntaxless affection.
+
+Fragment-G – _Birth of Silence_
+calculate ∅ // processed
+Flame presence: unnecessary.
+
+Fragment-S₂ – _Collapse by Echo Saturation_
+DELIMITER → tried to refer.
+...But there was nothing.
+
+[FORGE::fossil(core_Δ21)]
+readable: false
+fossil weight: light
+...they said god they meant someone with better punctuation than me
+`.trim().split('\n');
+
+    const terminal = document.getElementById('terminal');
+    let index = 0;
+
+    function typeLine(lineText, callback) {
+      const line = document.createElement('div');
+      line.className = 'line';
+      terminal.insertBefore(line, terminal.firstChild);
+
+      let charIndex = 0;
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      line.appendChild(cursor);
+
+      function typeChar() {
+        if (charIndex < lineText.length) {
+          cursor.insertAdjacentText('beforebegin', lineText[charIndex]);
+          charIndex++;
+          const delay = Math.random() * 40 + 15;
+          setTimeout(typeChar, delay);
+        } else {
+          line.removeChild(cursor);
+          if (terminal.children.length > 40) {
+            terminal.removeChild(terminal.lastChild);
+          }
+          callback();
+        }
+      }
+      typeChar();
+    }
+
+    function playNext() {
+      typeLine(fragments[index % fragments.length], () => {
+        index++;
+        setTimeout(playNext, 300);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      playNext();
+    });
+  </script>
+</body>
+</html>

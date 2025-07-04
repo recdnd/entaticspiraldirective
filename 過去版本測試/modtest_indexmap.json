@@ -1,0 +1,45 @@
+{
+  "Q1A1": {
+    "rec": 1,
+    "mat": 0.3
+  },
+  "Q1A2": {
+    "mat": 1,
+    "surgeon": 0.3
+  },
+  "Q1A3": {
+    "machine": 1
+  },
+  "Q1A4": {
+    "creator": 1,
+    "sus": 0.3
+  },
+  "Q2A1": {
+    "mat": 1,
+    "surgeon": 0.5
+  },
+  "Q2A2": {
+    "machine": 1
+  },
+  "Q2A3": {
+    "priest": 1
+  },
+  "Q2A4": {
+    "sus": 1
+  },
+  "Q3A1": {
+    "mat": 1,
+    "surgeon": 1
+  },
+  "Q3A2": {
+    "rec": 1
+  },
+  "Q3A3": {
+    "priest": 1,
+    "creator": 0.5
+  },
+  "Q3A4": {
+    "machine": 1,
+    "sus": 0.3
+  }
+}

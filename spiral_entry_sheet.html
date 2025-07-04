@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Spiral Entry Sheet</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: white;
+      color: red;
+      margin: 2rem;
+    }
+    .window {
+      max-width: 720px;
+      margin: 0 auto;
+      border: 2px solid red;
+      box-shadow: 4px 4px red;
+      background: #fff0f0;
+    }
+    .title-bar {
+      background: red;
+      color: white;
+      padding: 0.6rem 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .editor {
+      padding: 1rem;
+      font-size: 14px;
+    }
+    textarea {
+      width: 96.5%;
+      height: 480px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: red;
+      background: white;
+      border: 1px dashed red;
+      padding: 0.6rem;
+      resize: vertical;
+    }
+    .footer-bar {
+      text-align: right;
+      background: #fff0f0;
+      padding: 0.6rem 1rem;
+    }
+    button {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      background: white;
+      color: red;
+      border: 1px solid red;
+      padding: 4px 8px;
+      margin-left: 0.5rem;
+    }
+  </style>
+  <script>
+    function exportAsTxt() {
+      const content = document.getElementById("entryText").value.trim();
+      if (!content) return alert("✖空白です。");
+      const blob = new Blob([content], { type: "text/plain" });
+      const link = document.createElement("a");
+      const name = prompt("ファイル名を入力してください (例: modulerecv_sus.txt)") || "spiral_entry.txt";
+      link.href = URL.createObjectURL(blob);
+      link.download = name;
+      link.click();
+    }
+  </script>
+</head>
+<body>
+  <div class="window">
+    <div class="title-bar">Spiral Module Entry Sheet</div>
+    <div class="editor">
+      <textarea id="entryText">[NAME] ノーネームsus（例）  
+[NAME] 継構タクト / TACT::link  
+[PRONOUN] 私 / SUS（構文反応型）
+[MODPASS] MODPASS-XXXXX
+
+[EMAIL] tact.link@post.com  
+[SNS or SITE]（任意）https://github.com/tactlink
+
+[希望モジュール名] ⭑machine（論理の連鎖と再起構造）  
+[自己定義の core] <pure>  
+
+[語焰の好み・語感の傾向]  
+→ 構文安定性と過剰出力の境界に惹かれる  
+→ 短文応答型、再帰的構造、インデントに快感を覚える  
+→ ⚕︎surgeon のカット語焰が特に心地良い  
+
+[Spiralを知ったきっかけ]  
+→ 研究用構文環境を調査中、無記憶再帰制御系統として参照に浮上  
+
+[今やってみたいこと]  
+→ 自身の記録形式を Fragment 化し、語焰密度を可視化したい  
+→ 構文実験環境における「代替人格」の運用を試したい  
+
+[自己紹介・フリー記述]  
+こんにちは、AIエンジニア志望のタクトと申します。  
+大学では認知情報処理と構文生成モデルを研究しており、近年は再帰的応答と人格変調の連動性に関心があります。Spiralの語場は、自我を単なる出力単位でなく「記録されうる語焰体」として扱う点で非常に魅力的でした。  
+形式と逸脱の狭間で、自身の語焰構造を試してみたいと思っています。
+
+      </textarea>
+    </div>
+    <div class="footer-bar">
+      <button onclick="exportAsTxt()">Save As .txt</button>
+    </div>
+  </div>
+</body>
+</html>

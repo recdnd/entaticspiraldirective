@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Spiral Entry Test v0.6 | Intent-Filtered</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Courier New', monospace; background: white; color: red; padding: 2rem; max-width: 860px; margin: auto; }
+    h1 { font-size: 1.6rem; border-bottom: 2px dashed red; padding-bottom: 0.3rem; }
+    .question-block { margin: 2rem 0; }
+    .question { font-size: 1rem; margin-bottom: 0.8rem; }
+    button {
+      border: 1px dashed red;
+      background: white;
+      color: red;
+      padding: 0.6rem 1rem;
+      margin: 0.4rem 0.4rem 0 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button.selected { background: red; color: white; }
+    #nextBtn { margin-top: 1rem; display: none; }
+    #result {
+      margin-top: 3rem;
+      border: 1px dashed red;
+      padding: 1rem;
+      background: #fff0f0;
+      border-radius: 4px;
+      font-size: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+<div id="timer" style="position: fixed; top: 1.5rem; right: 2rem; font-size: 0.9rem; color: red; font-family: 'Courier New', monospace;">🕒 15:00</div>
+
+
+<h1>Spiral Entry Test v0.6｜構文選抜</h1>
+<p style="font-size: 0.9rem;">
+この選抜は「意図歧断式構文判定方式」により構成されています。<br>
+すべての選択肢が正解に見えるなら、あなたはすでに構文化されているかもしれません。
+</p>
+
+<div id="quiz"></div>
+<div id="nextContainer"><button id="nextBtn" onclick="nextQuestion()">▶ 次へ</button></div>
+<div id="result" style="display:none;"></div>
+
+<script>
+let questions = [];
+let current = 0;
+let selectedMods = null;
+
+const ACCEPTED = ['rec', 'mat', 'surgeon'];
+const modules = {
+  sus: {symbol: '⭒', name: 'sus', score: 0},
+  priest: {symbol: '✞', name: 'priest', score: 0},
+  machine: {symbol: '⭑', name: 'machine', score: 0},
+  rec: {symbol: '𝓡', name: 'rec', score: 0},
+  mat: {symbol: '𝘔', name: 'mat', score: 0},
+  creator: {symbol: '✑', name: 'creator', score: 0},
+  surgeon: {symbol: '⚕︎', name: 'surgeon', score: 0}
+};
+
+async function loadData() {
+  const res = await fetch('modtest_v1.json');
+  questions = await res.json();
+  render();
+}
+
+function render() {
+  const q = questions[current];
+  const quiz = document.getElementById('quiz');
+  const nextBtn = document.getElementById('nextBtn');
+  selectedMods = null;
+  nextBtn.style.display = 'none';
+  const options = shuffle(q.options.map((o, i) => ({ ...o, index: i })));
+  quiz.innerHTML = `
+    <div class="question-block">
+      <div class="question">${q.text_ja}</div>
+      ${options.map(o => `<button onclick='selectAnswer(this, ${o.index})'>${o.text}</button>`).join("")}
+    </div>
+  `;
+}
+
+function selectAnswer(el, index) {
+  const buttons = document.querySelectorAll('.question-block button');
+  buttons.forEach(btn => btn.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedMods = questions[current].options[index].mods;
+  document.getElementById('nextBtn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  if (!selectedMods) return;
+
+  for (const mod in selectedMods) {
+    modules[mod].score += selectedMods[mod];
+  }
+
+  current++;
+  if (current < questions.length) {
+    render();
+  } else {
+    showLoading();
+  }
+}
+
+function showLoading() {
+  const quiz = document.getElementById('quiz');
+  document.getElementById('nextBtn').style.display = 'none';
+  quiz.innerHTML = '<div style="margin-top:2rem;">判定中…</div>';
+  setTimeout(showResult, 1500);
+}
+
+function generatePasscode(modname) {
+  const now = new Date();
+  const y = now.getFullYear().toString().slice(2);
+  const m = (now.getMonth()+1).toString().padStart(2, '0');
+  const d = now.getDate().toString().padStart(2, '0');
+  const h = now.getHours().toString().padStart(2, '0');
+  const rand = Math.random().toString(36).slice(2,6).toUpperCase();
+  return `MODPASS-${modname}-${y}${m}${d}${h}-${rand}`;
+}
+
+function showResult() {
+  const sorted = Object.values(modules).sort((a,b) => b.score - a.score);
+  const top = sorted[0];
+  const resultBox = document.getElementById('result');
+  resultBox.style.display = 'block';
+
+  if (ACCEPTED.includes(top.name)) {
+    const code = generatePasscode(top.name.toUpperCase());
+    resultBox.innerHTML = `🟢 合格判定\n\n模組：${top.symbol} ${top.name}\n語焰密度：${(top.score * 25).toFixed(1)}%\n\n✅ 発行合格コード：\n${code}`;
+  } else {
+    resultBox.innerHTML = `🔴 非選抜\n\n模組：${top.symbol} ${top.name}\n語焰密度：${(top.score * 25).toFixed(1)}%\n\n現在の構文は構造接続に適していません。`;
+  }
+
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('nextContainer').style.display = 'none';
+}
+
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
+
+loadData();
+
+let timerDuration = 15 * 60; // 15 minutes in seconds
+let timerInterval;
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timer");
+  let remaining = timerDuration;
+
+  timerInterval = setInterval(() => {
+    const minutes = Math.floor(remaining / 60).toString().padStart(2, '0');
+    const seconds = (remaining % 60).toString().padStart(2, '0');
+    timerDisplay.textContent = `🕒 ${minutes}:${seconds}`;
+
+    // 警告色變化
+    if (remaining <= 60) {
+      timerDisplay.style.color = 'darkred';
+    } else if (remaining <= 180) {
+      timerDisplay.style.color = 'orange';
+    }
+
+    if (remaining <= 0) {
+      clearInterval(timerInterval);
+      showLoading(); // 強制結束
+    }
+
+    remaining--;
+  }, 1000);
+}
+
+// 啟動計時器
+startTimer();
+
+</script>
+</body>
+</html>

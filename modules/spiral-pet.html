@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spiral Pet</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      font-family: 'Courier New', monospace;
+    }
+    #pet-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #pet-core {
+      font-size: 1.4rem;
+      color: red;
+      border: 1px dashed red;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      background: white;
+      user-select: none;
+      cursor: pointer;
+    }
+    #equation {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #700000;
+    }
+    #fed {
+      font-size: 0.65rem;
+      margin-top: 0.2rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="pet-container">
+    <div id="pet-core">sus</div>
+    <div id="equation">(☆)+(☆☆) = ?</div>
+    <div id="fed">⭒hunger = 0</div>
+  </div>
+
+  <script>
+    const petCore = document.getElementById('pet-core');
+    const equation = document.getElementById('equation');
+    const fed = document.getElementById('fed');
+
+    const phrases = [
+      '(☆)+(☆☆) = ?',
+      '(☆☆)+(☆☆☆) = ?',
+      '(☆☆☆)+(☆☆☆) = ?',
+      '(∅)+(∅) = ∅',
+      '(★)+(★) = ( )',
+      '(✞)+(✞)+(✞) = ?',
+      '(⭑)+(✑) = ???'
+    ];
+
+    let hunger = 0;
+    function updatePhrase() {
+      equation.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+    }
+
+    setInterval(() => {
+      hunger++;
+      updatePhrase();
+      fed.textContent = `⭒hunger = ${hunger}`;
+    }, 4000);
+
+    petCore.addEventListener('click', () => {
+      hunger = 0;
+      equation.textContent = '(chewing...)';
+      petCore.style.borderColor = '#f00';
+      petCore.style.background = '#fff0f0';
+      fed.textContent = `⭒hunger = 0`;
+      setTimeout(() => {
+        petCore.style.borderColor = 'red';
+        petCore.style.background = 'white';
+        updatePhrase();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

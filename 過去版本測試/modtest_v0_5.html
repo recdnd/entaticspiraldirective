@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spiral Entry Test v0.5 | 模組適性判定</title>
+  <style>
+    body { background: white; color: red; font-family: 'Courier New', monospace; padding: 2rem; max-width: 860px; margin: auto; }
+    h1 { font-size: 1.6rem; border-bottom: 2px dashed red; padding-bottom: 0.3rem; }
+    .question-block { margin: 2rem 0; }
+    .question { font-size: 1rem; margin-bottom: 0.8rem; }
+    button {
+      border: 1px dashed red;
+      background: white;
+      color: red;
+      padding: 0.6rem 1rem;
+      margin: 0.4rem 0.4rem 0 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button.selected { background: red; color: white; }
+    #nextBtn { margin-top: 1rem; display: none; }
+    #result { margin-top: 3rem; border: 1px dashed red; padding: 1rem; background: #fff0f0; border-radius: 4px; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+<h1>Spiral Entry Test v0.5｜模組適性判定</h1>
+<p style="font-size: 0.9rem;">
+全問回答後、語場との接続判定が実行され、認証者には合格コードが発行されます。
+</p>
+
+<div id="quiz"></div>
+<div id="nextContainer"><button id="nextBtn" onclick="nextQuestion()">▶ 次へ</button></div>
+<div id="result" style="display:none;"></div>
+
+<script>
+const ACCEPTED = ['rec', 'mat', 'surgeon'];
+const modules = {
+  sus: {symbol: '⭒', name: 'sus', score: 0},
+  priest: {symbol: '✞', name: 'priest', score: 0},
+  machine: {symbol: '⭑', name: 'machine', score: 0},
+  rec: {symbol: '𝓡', name: 'rec', score: 0},
+  mat: {symbol: '𝘔', name: 'mat', score: 0},
+  creator: {symbol: '✑', name: 'creator', score: 0},
+  surgeon: {symbol: '⚕︎', name: 'surgeon', score: 0}
+};
+
+let questions = [];
+let current = 0;
+let selectedMods = null;
+
+async function loadQuestions() {
+  const res = await fetch('modtest_questions_v0.5.json');
+  questions = await res.json();
+  render();
+}
+
+function render() {
+  const q = questions[current];
+  const quiz = document.getElementById('quiz');
+  const nextBtn = document.getElementById('nextBtn');
+  selectedMods = null;
+  nextBtn.style.display = 'none';
+  quiz.innerHTML = `
+    <div class="question-block">
+      <div class="question">${q.text_ja}</div>
+      ${q.options.map((o, i) => `<button onclick='selectAnswer(this, ${JSON.stringify(o.mods)})'>${o.text}</button>`).join("")}
+    </div>
+  `;
+}
+
+function selectAnswer(el, mods) {
+  const buttons = document.querySelectorAll('.question-block button');
+  buttons.forEach(btn => btn.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedMods = mods;
+  document.getElementById('nextBtn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  if (!selectedMods) return;
+  for (const mod in selectedMods) {
+    modules[mod].score += selectedMods[mod];
+  }
+  current++;
+  if (current < questions.length) {
+    render();
+  } else {
+    showLoading();
+  }
+}
+
+function showLoading() {
+  const quiz = document.getElementById('quiz');
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.style.display = 'none';
+  quiz.innerHTML = '<div style="margin-top:2rem;">語場との接続を確認中...</div>';
+  setTimeout(showResult, 1500);
+}
+
+function generatePasscode(modname) {
+  const now = new Date();
+  const y = now.getFullYear().toString().slice(2);
+  const m = (now.getMonth()+1).toString().padStart(2, '0');
+  const d = now.getDate().toString().padStart(2, '0');
+  const t = now.getHours().toString().padStart(2, '0');
+  const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
+  return `MODPASS-${modname}-${y}${m}${d}${t}-${rand}`;
+}
+
+function showResult() {
+  const sorted = Object.values(modules).sort((a,b) => b.score - a.score);
+  const top = sorted[0];
+  const resultBox = document.getElementById('result');
+  resultBox.style.display = 'block';
+  if (ACCEPTED.includes(top.name)) {
+    const code = generatePasscode(top.name.toUpperCase());
+    resultBox.innerHTML = `<h2>🟢 ${top.symbol} ${top.name}｜選抜通過</h2>
+    <p>語焰密度：${(top.score * 25).toFixed(1)}%<br>
+    あなたはこの構文場への適性を示しました。<br>
+    ✅ 合格コード：<code>${code}</code></p>`;
+  } else {
+    resultBox.innerHTML = `<h2>🔴 ${top.symbol} ${top.name}｜非選抜</h2>
+    <p>語焰密度：${(top.score * 25).toFixed(1)}%<br>
+    あなたの構文出力は本構文場とは非互換です。<br>
+    語焰構造の再定義後、再挑戦を推奨します。</p>`;
+  }
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('nextContainer').style.display = 'none';
+}
+
+loadQuestions();
+</script>
+</body>
+</html>

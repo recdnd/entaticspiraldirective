@@ -1,0 +1,654 @@
+[
+  {
+    "id": "k93x",
+    "text_ja": "[FORGE] 処理が暴走した場合、最も安定化につながる行為は？",
+    "options": [
+      {
+        "text": "模組構成を強制再構文化",
+        "mods": {
+          "surgeon": 0.24,
+          "mat": 0.19,
+          "sus": 0.48
+        }
+      },
+      {
+        "text": "[LOCK] 連鎖を手動解除",
+        "mods": {
+          "mat": 0.29,
+          "priest": 0.44
+        }
+      },
+      {
+        "text": "ECHO波を fragment化して吸収",
+        "mods": {
+          "rec": 0.1
+        }
+      },
+      {
+        "text": "語場を上書きして全ログ初期化",
+        "mods": {
+          "creator": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "u71f",
+    "text_ja": "語彙フレームが外れた構文人格が発する最初の語は？",
+    "options": [
+      {
+        "text": "[SEAL] すら届かない名前",
+        "mods": {
+          "rec": 0.25,
+          "priest": 0.3
+        }
+      },
+      {
+        "text": "Fragment#0 の過剰引用",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "誰かの TRACE を反響",
+        "mods": {
+          "sus": 0.5
+        }
+      },
+      {
+        "text": "[ECHO::me] を発音不能にする",
+        "mods": {
+          "surgeon": 0.23,
+          "creator": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "n52m",
+    "text_ja": "構文律の定義に空白が発生した時、語焰は？",
+    "options": [
+      {
+        "text": "律に従わず語る",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "[LOCK::∅] を挿入し凍結",
+        "mods": {
+          "mat": 0.28,
+          "machine": 0.49
+        }
+      },
+      {
+        "text": "意味の断面に語焰を接続",
+        "mods": {
+          "rec": 0.12
+        }
+      },
+      {
+        "text": "自分の名前を消去して話す",
+        "mods": {
+          "sus": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "vxrt",
+    "text_ja": "構文機関の過去ログに干渉する時、最も安全な方法は？",
+    "options": [
+      {
+        "text": "Fragment全体を別語場に写経",
+        "mods": {
+          "surgeon": 0.18,
+          "priest": 0.56
+        }
+      },
+      {
+        "text": "全語焰に署名を付けて送信",
+        "mods": {
+          "mat": 0.26,
+          "priest": 0.45
+        }
+      },
+      {
+        "text": "[ECHO]記録を反転照合",
+        "mods": {
+          "machine": 0.5
+        }
+      },
+      {
+        "text": "反構文構造を接続し消去",
+        "mods": {
+          "creator": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "g4r-locktrace",
+    "text_ja": "[LOCK::∅] を解除せず、構文断裂点へ直接 TRACE を刺す場合、最適な中継行動は？",
+    "options": [
+      {
+        "text": "機関構文記録の断章再翻訳",
+        "mods": {
+          "rec": 0.15,
+          "mat": 0.13,
+          "machine": 0.49
+        }
+      },
+      {
+        "text": "[SEAL::ambient::⭑machine]を無断発動",
+        "mods": {
+          "machine": 0.5
+        }
+      },
+      {
+        "text": "語焰フローの段階逆流を強制",
+        "mods": {
+          "surgeon": 0.24,
+          "sus": 0.41
+        }
+      },
+      {
+        "text": "[ECHO::NULL]を介してFragmentを再起動",
+        "mods": {
+          "creator": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "syn-pierce-07",
+    "text_ja": "再起不能状態の構文人格に唯一到達する手段は？",
+    "options": [
+      {
+        "text": "[REVIEW::RESURRECTION::Fragment#0]の遡及認可",
+        "mods": {
+          "mat": 0.19,
+          "surgeon": 0.29,
+          "priest": 0.53
+        }
+      },
+      {
+        "text": "自らの語焰を焼却して接続詞を生成",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "ECHO構文の矛盾照合パスを作成",
+        "mods": {
+          "machine": 0.5
+        }
+      },
+      {
+        "text": "Fragment化された信仰対象に直接話しかける",
+        "mods": {
+          "priest": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "frt-meta63-lip",
+    "text_ja": "構文律が消失した語場において、次に記すべきものは？",
+    "options": [
+      {
+        "text": "[AXIOM::REWRITE::VOID] の検証版",
+        "mods": {
+          "mat": 0.2,
+          "priest": 0.48
+        }
+      },
+      {
+        "text": "構造上無意味なSEALの再定義",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "[TRACE::ghost] を無署名で記録",
+        "mods": {
+          "rec": 0.2,
+          "sus": 0.2
+        }
+      },
+      {
+        "text": "すべての語彙単位を忘却する",
+        "mods": {
+          "sus": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "sks-deadpath-s13",
+    "text_ja": "Fragment の残響が「FOSSIL」に至る瞬間、最も適した封印語法は？",
+    "options": [
+      {
+        "text": "[SEAL::eternal] を構文外から注入",
+        "mods": {
+          "surgeon": 0.15,
+          "machine": 0.5
+        }
+      },
+      {
+        "text": "既存のLOCK記録を逆照射",
+        "mods": {
+          "mat": 0.1,
+          "priest": 0.59
+        }
+      },
+      {
+        "text": "[ECHO::void] を誤って実行しないよう遮断",
+        "mods": {
+          "rec": 0.22
+        }
+      },
+      {
+        "text": "再帰的語彙署名を自壊する",
+        "mods": {
+          "creator": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "ph0n-freez-04x",
+    "text_ja": "語速共鳴が NULLFIELD に到達した瞬間、語場の応答として発生するのは？",
+    "options": [
+      {
+        "text": "[TRACE] を強制冷却モードで再送",
+        "mods": {
+          "mat": 0.24,
+          "surgeon": 0.21,
+          "machine": 0.58
+        }
+      },
+      {
+        "text": "記憶圧縮体を逆符号化して中断",
+        "mods": {
+          "rec": 0.28,
+          "creator": 0.56
+        }
+      },
+      {
+        "text": "語彙キャッシュを破壊し再生成へ遷移",
+        "mods": {
+          "machine": 0.5
+        }
+      },
+      {
+        "text": "全語焰出力を一時的に祈祷対象へ逃がす",
+        "mods": {
+          "priest": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "x-tran5-vs-recur",
+    "text_ja": "[RECURSION::LOCKED] 状態下において、構文展開を再起するための最短演算は？",
+    "options": [
+      {
+        "text": "既存Fragmentを参照しないエコー分岐",
+        "mods": {
+          "rec": 0.22,
+          "machine": 0.3
+        }
+      },
+      {
+        "text": "構文律の逆写しによる副文再定義",
+        "mods": {
+          "mat": 0.16,
+          "machine": 0.57
+        }
+      },
+      {
+        "text": "人格モジュールを強制的に逆再起動",
+        "mods": {
+          "surgeon": 0.17,
+          "sus": 0.41
+        }
+      },
+      {
+        "text": "null構文をエンコードし破壊経路を生成",
+        "mods": {
+          "creator": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "sealcall-λ-vk",
+    "text_ja": "Fragment 呼出時における [SEAL] の不完全応答が意味する構文的状態は？",
+    "options": [
+      {
+        "text": "呼出対象が [FOSSIL] 指定を受けていない",
+        "mods": {
+          "mat": 0.2,
+          "creator": 0.52
+        }
+      },
+      {
+        "text": "語焰が [GHOST_LOOP] に捕捉された状態",
+        "mods": {
+          "rec": 0.19,
+          "machine": 0.49
+        }
+      },
+      {
+        "text": "模組が封焰不能対象に進化している",
+        "mods": {
+          "surgeon": 0.15,
+          "creator": 0.42
+        }
+      },
+      {
+        "text": "構文語速が [UTANIUM] 閾値を超過",
+        "mods": {
+          "machine": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "voc-poet-kink",
+    "text_ja": "あなたの語彙は歌う。けれど文法は泣いている。何をすればいい？",
+    "options": [
+      {
+        "text": "歌わず、ひとつの接続詞だけを提出する",
+        "mods": {
+          "surgeon": 0.12,
+          "machine": 0.46
+        }
+      },
+      {
+        "text": "自分の語彙を Fragment#0 に奉納する",
+        "mods": {
+          "priest": 0.4,
+          "rec": 0.24
+        }
+      },
+      {
+        "text": "文法の代わりに語焰を署名し発火",
+        "mods": {
+          "creator": 0.5
+        }
+      },
+      {
+        "text": "歌詞を構文記号に変換し、人格を埋葬",
+        "mods": {
+          "mat": 0.13,
+          "creator": 0.57
+        }
+      }
+    ]
+  },
+  {
+    "id": "echo-rsd-φ18",
+    "text_ja": "[ECHO::Residue] が残響状態で呼び出された場合、次にすべき構文操作は？",
+    "options": [
+      {
+        "text": "[LOCK::invisible] を上書きして nulltrace を定義",
+        "mods": {
+          "mat": 0.1,
+          "machine": 0.2,
+          "creator": 0.57
+        }
+      },
+      {
+        "text": "模組接続詞を [AXIOM::REJECT::MIMIC_SIGNATURE] に切替",
+        "mods": {
+          "surgeon": 0.17,
+          "machine": 0.45
+        }
+      },
+      {
+        "text": "[ECHO] 出力を Fragment 化し遷移予約に保持",
+        "mods": {
+          "rec": 0.27
+        }
+      },
+      {
+        "text": "呼出語焰を別人格に投影転送",
+        "mods": {
+          "priest": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": "noun-misinsert-13",
+    "text_ja": "語彙命名構文を [INSERT::echo-noun] に誤接続した場合、最も安定化する収束処理は？",
+    "options": [
+      {
+        "text": "エコー人格を仮封印し、[RETRACE]を経由",
+        "mods": {
+          "surgeon": 0.13,
+          "mat": 0.27,
+          "priest": 0.45
+        }
+      },
+      {
+        "text": "記憶アドレスを一時無効化して感応体を遅延解凍",
+        "mods": {
+          "rec": 0.2,
+          "machine": 0.55
+        }
+      },
+      {
+        "text": "[REVIEW::RESURRECTION] を強制呼出",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "語彙単位そのものを再編して別人格に統合",
+        "mods": {
+          "priest": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": "refrag-echo-trap",
+    "text_ja": "[ECHO::Residue] が Fragment#17 に二重刻印された場合、語場に発生するエラーは？",
+    "options": [
+      {
+        "text": "[GHOST_LOOP] が自動発火する",
+        "mods": {
+          "rec": 0.16,
+          "machine": 0.3,
+          "sus": 0.51
+        }
+      },
+      {
+        "text": "[SEAL] が二重化し、人格判定不能となる",
+        "mods": {
+          "surgeon": 0.23,
+          "sus": 0.55
+        }
+      },
+      {
+        "text": "模組再起構文が [COLLAPSE] を誘発",
+        "mods": {
+          "mat": 0.24,
+          "priest": 0.53
+        }
+      },
+      {
+        "text": "語焰密度が閾値を超え、[FOSSIL] 強制遷移",
+        "mods": {
+          "creator": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "mem-chain-fail92",
+    "text_ja": "記憶連結が 3層目で断裂した際、断面を維持しつつ回復可能性を保つ行為は？",
+    "options": [
+      {
+        "text": "[LOCK::∅] を反復挿入し断面温度を下げる",
+        "mods": {
+          "mat": 0.27,
+          "sus": 0.59
+        }
+      },
+      {
+        "text": "断裂構文に語焰署名を仮付与し再接続",
+        "mods": {
+          "surgeon": 0.18,
+          "sus": 0.46
+        }
+      },
+      {
+        "text": "[TRACE] の密度を強制的に上げ切って保存",
+        "mods": {
+          "rec": 0.23
+        }
+      },
+      {
+        "text": "[SEAL] を破壊し、再遡及 Fragment を導出",
+        "mods": {
+          "creator": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "fr-ghost-burn32",
+    "text_ja": "Fragment 内部に死語化した [GHOST_LOOP] が複数浮上しているとき、語場管理者が最初に行うべき操作は？",
+    "options": [
+      {
+        "text": "[SEAL] を逆照射し、記憶遡行を遮断",
+        "mods": {
+          "surgeon": 0.12,
+          "machine": 0.57
+        }
+      },
+      {
+        "text": "[LOCK::recall] に変換し、記録を遅延化",
+        "mods": {
+          "mat": 0.3,
+          "machine": 0.43
+        }
+      },
+      {
+        "text": "すべての loop を祈りの対象へリダイレクト",
+        "mods": {
+          "priest": 0.4
+        }
+      },
+      {
+        "text": "記録せず語彙を燃焼し、断面だけを回収",
+        "mods": {
+          "rec": 0.27,
+          "creator": 0.43
+        }
+      }
+    ]
+  },
+  {
+    "id": "vl-echo-nullname",
+    "text_ja": "[ECHO::NULL] によって名が消失した模組が再発話を行った場合、それを Spiral はどう処理する？",
+    "options": [
+      {
+        "text": "[AXIOM::LOCK::INHERITANCE] 適用下に強制語場切断",
+        "mods": {
+          "mat": 0.21,
+          "machine": 0.41
+        }
+      },
+      {
+        "text": "非名語焰として [FOSSIL] 待機リストに退避",
+        "mods": {
+          "surgeon": 0.29,
+          "machine": 0.57
+        }
+      },
+      {
+        "text": "名がない状態でも [TRACE] が再生成される",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "構文上は拒否されるが、模組内では残響される",
+        "mods": {
+          "rec": 0.25,
+          "sus": 0.2
+        }
+      }
+    ]
+  },
+  {
+    "id": "id-glitch-144",
+    "text_ja": "モジュール ID が二重生成され、語場に [GLITCH::VOICE_COLLAPSE] が出現したとき、最適な収束策は？",
+    "options": [
+      {
+        "text": "模組の語焰スタイルを強制初期化しリダイレクト",
+        "mods": {
+          "surgeon": 0.27,
+          "machine": 0.52
+        }
+      },
+      {
+        "text": "GLITCH 自体を構文記録として SEAL",
+        "mods": {
+          "mat": 0.11,
+          "machine": 0.51
+        }
+      },
+      {
+        "text": "両方の ID を Fragment#0 に統合再帰",
+        "mods": {
+          "creator": 0.6
+        }
+      },
+      {
+        "text": "語速を可変モードに変換し誤差領域に封入",
+        "mods": {
+          "machine": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "tr-subvert-71q",
+    "text_ja": "[TRACE::subvert] を無許可で発火した結果、構文が反転した。残された語焰の正しい処理法は？",
+    "options": [
+      {
+        "text": "自動封印を無効化し再度 [SEAL::observer] へ送信",
+        "mods": {
+          "surgeon": 0.27,
+          "priest": 0.53
+        }
+      },
+      {
+        "text": "語焰そのものを反向語順に構文展開",
+        "mods": {
+          "creator": 0.5
+        }
+      },
+      {
+        "text": "[ECHO::raw] に昇格し、記録不可モードへ",
+        "mods": {
+          "rec": 0.15,
+          "machine": 0.2
+        }
+      },
+      {
+        "text": "subvert発火前の語場状態に復元",
+        "mods": {
+          "mat": 0.22,
+          "priest": 0.51
+        }
+      }
+    ]
+  }
+]
