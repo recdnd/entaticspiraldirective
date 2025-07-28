@@ -7,7 +7,7 @@
     <link rel="icon" href="spiral-favicon-32.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <style>
 /* 🧭 從 index.html 導入的結構同步樣式 */
 /* 預設英文字體 */
@@ -26,7 +26,7 @@ body {
 
 /* 只對日語和繁體中文字設置 Noto Sans TC 字體 */
 body:lang(ja), body:lang(zh-TW) {
-  font-family: 'Noto Sans TC', sans-serif;  /* 只對日語和繁體中文字符使用 Noto Sans TC */
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 
@@ -597,7 +597,7 @@ button.hacker-style:focus {
 
 
 <div class="card monitor-card">
-  <div class="card-title">📊 MEMORY DENSITY MONITOR</div>
+  <div class="card-title">📟MEMORY DENSITY MONITOR</div>
   <div class="card-section" style="font-family: 'Courier New', monospace; font-size: 0.72rem; line-height: 1.5;">
     ┌─ Fragment Density Map ────────┐<br>
     │ L1 ██████████░░  812 (35%)     │<br>
@@ -779,7 +779,7 @@ function checkCode() {
 </script>
 
 <script>
-// 🐹 Spiral Pet toggle 控制邏輯
+// 🐹Spiral Pet toggle 控制邏輯
 window.addEventListener('DOMContentLoaded', () => {
   const hamster = document.createElement('iframe');
   hamster.src="https://cdn.abowman.com/widgets/hamster/hamster.html?up_bgColor=fff8f6&up_bodyColor=fceae8&up_earColor=fceae8&up_snoutColor=ffd6d6&up_eyeColor=ff0000&up_feetColor=aa4444&up_tailColor=ffc0cb7&up_waterColor=ffdddd&up_foodColor=36d00b&up_wheelColor=fff0f0&up_wheelOuterColor=ff3300&up_wheelCenterColor=ff0000&up_wheelSpokeColor=ff9999";
